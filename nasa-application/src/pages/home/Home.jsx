@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Home() {
   return (
-    <div className='bg-green-200 h-screen w-full'>
-      <div className="size-20 bg-black"></div>
+    <div className="h-auto w-full min-h-screen bg-transparent">
+      <div className="bg-black h-screen w-full fixed top-0 left-0 z-0"></div>
     </div>
   )
 }
