@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/common/navbar/Navbar';
 
 import gradientBack from '../../assets/images/starrySkyFew.svg'
+import backImage from '../../assets/images/starrySky.svg'
 
 export default function Apod() {
     const [fetchedData, setFetchedData] = useState({
@@ -73,11 +74,14 @@ export default function Apod() {
         </div>
 
         {/* contains the fetched data including image and explanation */}
-        <div className="h-auto w-full">
+        <div className="h-auto w-full relative overflow-hidden">
+            <img src={backImage} alt="" className="absolute z-0 w-full h-full "/>
             <div className="image_con">
                 <img 
-                className="mx-auto rounded-lg" 
-                src={fetchedData ? fetchedData.url : null} alt="" />
+                className="mx-auto rounded-lg relative z-2 border-l-[10px] border-l-[solid] border-l-[#212121] border-t-[10px] border-t-[solid] border-t-[#212121] mt-14" 
+                // src={fetchedData ? fetchedData.url : null} 
+                src={fetchedData ? fetchedData.url : null} 
+                alt="" />
             </div>
             <div className="text_con relative z-1">
                 <h1 className="relative z-10 text-white text-wrap max-w-[500px] text-5xl text-center mx-auto mt-8 mb-6">{fetchedData ? fetchedData.title : 'The follwing image has not title!'}</h1>
