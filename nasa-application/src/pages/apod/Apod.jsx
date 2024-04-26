@@ -34,7 +34,7 @@ export default function Apod() {
       
       const navbarData = {
         stayDown: false,
-        background: false
+        background: true
       }
 
       useEffect(()=> {
