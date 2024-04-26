@@ -7,28 +7,36 @@ import EarthImage from '../../assets/images/earthEdit1.png'
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
   const [stayDown, setStayDown] = useState(true)
+
+  const NASA_API = process.env.React_App_NASA_API_KEY;
+  
   const navbarOptions = [
     {
       optName: 'Home',
       navTo: '/'
     },
     {
+      optName: 'APOD',
+      navTo: '/apod'
+    },
+    {
       optName: 'Rover',
       navTo: '/rover'
     },
   ]
-
+  
   const navbarData = {
     stayDown,
     background: false
   }
-
+  
   useEffect(()=> {
     let loadTimer1;
     loadTimer1 = setTimeout(() => {
       setStayDown(false)
       setLoaded(true)
     }, 1000);
+    
   }, [])
   return (
     <div className="h-auto w-full min-h-screen bg-transparent">
