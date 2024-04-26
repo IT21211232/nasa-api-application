@@ -20,7 +20,7 @@ export default function Home() {
       navTo: '/apod'
     },
     {
-      optName: 'Rover',
+      optName: 'Rover Pics',
       navTo: '/rover'
     },
   ]

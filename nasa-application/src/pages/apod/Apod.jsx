@@ -27,7 +27,7 @@ export default function Apod() {
           navTo: '/apod'
         },
         {
-          optName: 'Rover',
+          optName: 'Rover Pics',
           navTo: '/rover'
         },
       ]
@@ -76,18 +76,17 @@ export default function Apod() {
         {/* contains the fetched data including image and explanation */}
         <div className="h-auto w-full relative overflow-hidden">
             <img src={backImage} alt="" className="absolute z-0 w-full h-full "/>
-            <div className="image_con">
-                <img 
-                className="mx-auto rounded-lg relative z-2 border-l-[10px] border-l-[solid] border-l-[#212121] border-t-[10px] border-t-[solid] border-t-[#212121] mt-14" 
-                // src={fetchedData ? fetchedData.url : null} 
-                src={fetchedData ? fetchedData.url : null} 
-                alt="" />
-            </div>
             <div className="text_con relative z-1">
-                <h1 className="relative z-10 text-white text-wrap max-w-[500px] text-5xl text-center mx-auto mt-8 mb-6">{fetchedData ? fetchedData.title : 'The follwing image has not title!'}</h1>
+                <h1 className="relative z-1 text-white text-wrap max-w-[500px] text-5xl text-center mx-auto mt-8 mb-6">{fetchedData ? fetchedData.title : 'The follwing image has not title!'}</h1>
                 <div className="desc_con w-[90%] mx-auto">
                     <p className="text-[#a1a1a1] mb-10">{fetchedData ? fetchedData.explanation : null}</p>
                 </div>
+            </div>
+            <div className="image_con mb-10">
+                <img 
+                className="relative mx-auto rounded-lg z-2 border-l-[10px] border-l-[solid] border-l-[#212121] border-t-[10px] border-t-[solid] border-t-[#212121]" 
+                src={fetchedData ? fetchedData.url : null} 
+                alt="" />
             </div>
         </div>
       </div>
