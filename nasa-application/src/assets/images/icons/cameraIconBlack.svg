@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.5" height="18" viewBox="0 0 19.5 18">
+  <g id="cameraIconBlack" transform="translate(-2.25 -2.75)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="3" cy="3" r="3" transform="translate(9 10)" fill="none" stroke="#262626" stroke-width="1.5"/>
+    <path id="Path_1" data-name="Path 1" d="M10,20h4c2.809,0,4.213,0,5.222-.674a4,4,0,0,0,1.1-1.1C21,17.213,21,15.809,21,13s0-4.213-.674-5.222a4,4,0,0,0-1.1-1.1C18.213,6,16.809,6,14,6H10c-2.809,0-4.213,0-5.222.674a4,4,0,0,0-1.1,1.1C3,8.786,3,10.19,3,13v0c0,2.809,0,4.213.674,5.222a4,4,0,0,0,1.1,1.1C5.787,20,7.191,20,10,20Z" fill="none" stroke="#262626" stroke-width="1.5"/>
+    <path id="Path_2" data-name="Path 2" d="M18,10h-.5" fill="none" stroke="#262626" stroke-linecap="round" stroke-width="1.5"/>
+    <path id="Path_3" data-name="Path 3" d="M14.5,3.5h-5" fill="none" stroke="#262626" stroke-linecap="round" stroke-width="1.5"/>
+  </g>
+</svg>
