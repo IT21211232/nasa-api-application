@@ -7,6 +7,8 @@ import EarthImage from '../../assets/images/earthEdit1.png'
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
   const [stayDown, setStayDown] = useState(true)
+  const [opaqueNav, setOpaqueNav] = useState(false)
+  console.log(opaqueNav);
 
   const NASA_API = process.env.React_App_NASA_API_KEY;
   
@@ -27,16 +29,34 @@ export default function Home() {
   
   const navbarData = {
     stayDown,
-    background: false
+    background: opaqueNav ? true : false
   }
   
   useEffect(()=> {
     let loadTimer1;
+    let scrollTimer;
     loadTimer1 = setTimeout(() => {
       setStayDown(false)
       setLoaded(true)
     }, 1000);
-    
+
+    const calculateScroll = () => {
+      clearTimeout(scrollTimer)
+      scrollTimer = setTimeout(() => {
+        if(window.scrollY > 100){
+          setOpaqueNav(true)
+        }
+        else{
+          setOpaqueNav(false)
+        }
+      }, 100);
+    }
+
+    window.addEventListener('scroll', calculateScroll)
+
+    return () => {
+      window.removeEventListener('scroll', calculateScroll)
+    }
   }, [])
   return (
     <div className="h-auto w-full min-h-screen bg-transparent">
@@ -49,7 +69,17 @@ export default function Home() {
       onClick={()=> {setLoaded(!loaded)}}
       className={`${loaded ? 'h-[80vh]' : 'h-[100vh]'}  w-full relative bg-transparent duration-[2000ms]`}></div>
       {/* <div className="h-screen w-full relative bg-[rgb(0,0,0,0.7)] backdrop-filter backdrop-blur-lg"></div> */}
-      <div className="h-screen w-full relative bg-[black]"></div>
+      <div className="h-screen w-full relative bg-black">
+        <div className='min-h-screen w-full'>
+          <div className="top_filler w-full h-[64px]"></div>
+          <div className="text_con mx-10 my-5">
+            <h1 className="max-[400px]:text-4xl text-white text-6xl">Astronomy</h1>
+            <h1 className="max-[400px]:text-4xl text-[#282828] text-6xl">Picture</h1>
+            <h1 className="max-[400px]:text-4xl text-white text-6xl">of the</h1>
+            <h1 className="max-[400px]:text-4xl text-[#282828] text-6xl">Day</h1>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
