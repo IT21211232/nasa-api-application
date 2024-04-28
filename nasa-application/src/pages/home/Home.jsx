@@ -29,7 +29,7 @@ export default function Home() {
   
   const navbarData = {
     stayDown,
-    background: opaqueNav ? true : false
+    background: loaded ? true : false
   }
   
   useEffect(()=> {
@@ -72,7 +72,7 @@ export default function Home() {
       <div className="h-screen w-full relative bg-black">
         <div className='min-h-screen w-full'>
           <div className="top_filler w-full h-[64px]"></div>
-          <div className="text_con mx-10 my-5">
+          <div className="text_con mx-auto w-fit my-5 text-center">
             <h1 className="max-[400px]:text-4xl text-white text-6xl">Astronomy</h1>
             <h1 className="max-[400px]:text-4xl text-[#282828] text-6xl">Picture</h1>
             <h1 className="max-[400px]:text-4xl text-white text-6xl">of the</h1>
