@@ -222,7 +222,7 @@ export default function RoverPics() {
     const navbarOptions = [
         {
           optName: 'Home',
-          navTo: '/'
+          navTo: '/home'
         },
         {
           optName: 'APOD',

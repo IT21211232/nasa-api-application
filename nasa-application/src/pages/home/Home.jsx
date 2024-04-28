@@ -15,7 +15,7 @@ export default function Home() {
   const navbarOptions = [
     {
       optName: 'Home',
-      navTo: '/'
+      navTo: '/home'
     },
     {
       optName: 'APOD',

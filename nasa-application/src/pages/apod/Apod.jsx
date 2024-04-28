@@ -20,7 +20,7 @@ export default function Apod() {
     const navbarOptions = [
         {
           optName: 'Home',
-          navTo: '/'
+          navTo: '/home'
         },
         {
           optName: 'APOD',
