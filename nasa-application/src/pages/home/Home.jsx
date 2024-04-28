@@ -73,10 +73,10 @@ export default function Home() {
         <div className='min-h-screen w-full'>
           <div className="top_filler w-full h-[64px]"></div>
           <div className="text_con mx-auto w-fit my-5 text-center">
-            <h1 className="max-[400px]:text-4xl text-white text-6xl">Astronomy</h1>
-            <h1 className="max-[400px]:text-4xl text-[#282828] text-6xl">Picture</h1>
-            <h1 className="max-[400px]:text-4xl text-white text-6xl">of the</h1>
-            <h1 className="max-[400px]:text-4xl text-[#282828] text-6xl">Day</h1>
+            <h1 className="max-[420px]:text-4xl text-white text-6xl">Astronomy</h1>
+            <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Picture</h1>
+            <h1 className="max-[420px]:text-4xl text-white text-6xl">of the</h1>
+            <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Day</h1>
           </div>
         </div>
       </div>
