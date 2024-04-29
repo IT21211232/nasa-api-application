@@ -13,10 +13,21 @@ export default function LoginRegisterContextProvider(props) {
       setCurrentUsername(username)
     }
 
+    const isLogged = () => {
+      if(currentUserId !== null && currentUsername !== null){
+        return true;
+      }
+      else{
+        return false
+      }
+
+    }
+
     const loginRegisterContextExports = {
         currentUsername,
         setCurrentUsername,
-        setUserData
+        setUserData,
+        isLogged
     }
   return (
     <LoginRegisterContext.Provider value={loginRegisterContextExports}>
