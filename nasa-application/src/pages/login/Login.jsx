@@ -1,19 +1,37 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+import { LoginRegisterContext } from '../../context/LoginRegisterContext';
+import axios from 'axios'
 
 export default function Login() {
     const [disMessage, setDisMessage] = useState(null)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    console.log(username);
-    console.log(password);
+    const {setUserData} = useContext(LoginRegisterContext)
+
+    const navigate = useNavigate();
+
+    const postUrl = `http://localhost:8070/signin/login`
 
 
     const handleForm = (e) => {
         e.preventDefault();
         if(username == '' || password == ''){
             setDisMessage('Fill the required fields to sign in')
+        }
+        else{
+          const loginData = {
+            username,
+            password
+          }
+          axios.post(postUrl, loginData).then((res) => {
+            setUserData(res.data._id, res.data.username)
+            navigate('/home')
+        }).catch((err) => {
+            setDisMessage('Invalid username or password!')
+        })
+
         }
     }
   return (
