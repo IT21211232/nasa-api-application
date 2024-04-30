@@ -5,16 +5,12 @@ import Navbar from '../../components/common/navbar/Navbar'
 import backDropStars from '../../assets/images/starrySky.svg'
 import EarthImage from '../../assets/images/earthEdit1.png'
 
-import { LoginRegisterContext } from '../../context/LoginRegisterContext'
-
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
   const [stayDown, setStayDown] = useState(true)
   const [opaqueNav, setOpaqueNav] = useState(false)
 
   const navigate = useNavigate();
-
-  const {isLogged} = useContext(LoginRegisterContext)
 
   const NASA_API = process.env.React_App_NASA_API_KEY;
   
@@ -39,9 +35,6 @@ export default function Home() {
   }
   
   useEffect(()=> {
-    if(!isLogged()){
-      navigate('/');
-    }
     let loadTimer1;
     let scrollTimer;
     loadTimer1 = setTimeout(() => {
@@ -68,7 +61,6 @@ export default function Home() {
     }
   }, [])
   return (
-    isLogged() &&
     <div className="h-auto w-full min-h-screen bg-transparent">
       <div className="bg-black h-screen w-full fixed top-0 left-0 z-0">
         <img src={backDropStars} alt="" className={`absolute opacity-80 w-full h-[160vh] object-cover ${loaded ? '-translate-y-[60vh]' : 'translate-y-0'} transition-transform duration-[2000ms] z-2`}/>
