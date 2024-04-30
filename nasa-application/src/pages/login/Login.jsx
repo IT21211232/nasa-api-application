@@ -1,14 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { LoginRegisterContext } from '../../context/LoginRegisterContext';
 import axios from 'axios'
 
 export default function Login() {
     const [disMessage, setDisMessage] = useState(null)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
-    const {setUserData} = useContext(LoginRegisterContext)
 
     const navigate = useNavigate();
 
@@ -26,7 +23,6 @@ export default function Login() {
             password
           }
           axios.post(postUrl, loginData).then((res) => {
-            setUserData(res.data._id, res.data.username)
             navigate('/home')
         }).catch((err) => {
             setDisMessage('Invalid username or password!')
