@@ -23,13 +23,15 @@ export default function Navbar({navbarOptions, metaData}) {
         }
         <div className=' my-4 flex flex-col items-center h-auto w-fit text-white'>
           <h2 className="logged_user mx-2">John Wilson</h2>
-          <button className="h-auto flex items-center my-4">
+          <button
+          onClick={logoutUser}
+          className="h-auto flex items-center my-4">
             <LogoutIcon sx={{fontSize: 20}} />
             <h2 className='ml-2'>logout</h2>
           </button>
         </div>
       </div>
-      <img  src={NasaLogo} alt="logo image" className={`absolute  left-2/4 -translate-x-1/2 -translate-y-1/2 filter invert transition-all duration-[2000ms] ${!stayDown ? 'h-[28px] top-2/4' : 'h-[90px] max-sm:h-[70px] top-[calc(50vh-100px)]'}`}/>
+      <img  src={NasaLogo} alt="logo image" className={`absolute left-2/4 -translate-x-1/2 -translate-y-1/2 filter invert transition-all duration-[2000ms] ${!stayDown ? 'h-[28px] top-2/4' : 'h-[90px] max-sm:h-[70px] top-[calc(50vh-100px)]'}`}/>
       <div className="h-full w-fit px-3 flex items-center opacity-100 max-sm:opacity-0 max-sm:pointer-events-none duration-200">
         {
         navbarOptions.map((data)=> (
