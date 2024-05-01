@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {Link} from 'react-router-dom'
+
+import { LoginRegisterContext } from '../../../context/LoginRegisterContext';
 
 import NasaLogo from '../../../assets/images/NASALogo.png'
 
@@ -8,6 +10,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 export default function Navbar({navbarOptions, metaData}) {
   const {stayDown, background} = metaData;
   const [navbarOpen, setNavbarOpen] = useState(false)
+  const {logoutUser} = useContext(LoginRegisterContext)
   
   return (
     <nav 
@@ -35,7 +38,9 @@ export default function Navbar({navbarOptions, metaData}) {
         }
         <div className='flex flex-col items-center text-white text-sm mx-2.5 '>
           <h2>John Wilson</h2>
-          <button className='opacity-60 hover:opacity-100 duration-200'>logout</button>
+          <button
+          onClick={logoutUser}
+          className='opacity-60 hover:opacity-100 duration-200'>logout</button>
         </div>
       </div>
       <div onClick={()=> {setNavbarOpen(!navbarOpen)}} className='sm:opacity-0 mr-3 w-fit h-full flex flex-col items-center justify-center transition-all duration-500'>
