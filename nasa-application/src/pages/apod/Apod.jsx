@@ -44,6 +44,7 @@ export default function Apod() {
       }
 
       useEffect(()=> {
+        window.scrollTo(0,0)
         async function fetchAPIData(){
             const url = 'https://api.nasa.gov/planetary/apod'+ `?api_key=${NASA_API}`
             try {
