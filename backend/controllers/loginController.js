@@ -31,7 +31,7 @@ async function login(req, res, next) {
 
         res.status(200).cookie('session_data', token, {
             httpOnly: true
-        }).json(nopassword);
+        }).json({ ...nopassword, token });
 
     } catch (error) {
         console.log(error);
