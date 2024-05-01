@@ -5,10 +5,14 @@ import Navbar from '../../components/common/navbar/Navbar'
 import backDropStars from '../../assets/images/starrySky.svg'
 import EarthImage from '../../assets/images/earthEdit1.png'
 
+import { LoginRegisterContext } from '../../context/LoginRegisterContext'
+
 export default function Home() {
   const [loaded, setLoaded] = useState(false)
   const [stayDown, setStayDown] = useState(true)
   const [opaqueNav, setOpaqueNav] = useState(false)
+
+  const {isLogged} = useContext(LoginRegisterContext)
 
   const navigate = useNavigate();
 
@@ -54,6 +58,10 @@ export default function Home() {
       }, 100);
     }
 
+    if(!isLogged()){
+      navigate('/')
+    }
+
     window.addEventListener('scroll', calculateScroll)
 
     return () => {
@@ -62,26 +70,34 @@ export default function Home() {
   }, [])
   return (
     <div className="h-auto w-full min-h-screen bg-transparent">
-      <div className="bg-black h-screen w-full fixed top-0 left-0 z-0">
-        <img src={backDropStars} alt="" className={`absolute opacity-80 w-full h-[160vh] object-cover ${loaded ? '-translate-y-[60vh]' : 'translate-y-0'} transition-transform duration-[2000ms] z-2`}/>
-        <img src={EarthImage} alt="" className={`absolute left-[50%] w-[80%] -translate-x-[50%] max-sm:w-[90vw] ${loaded ? 'top-[0] max-md:top-[20%] max-sm:top-[30%]' : 'top-[40%]' } duration-[2000ms]`}/>
-      </div>
-      <Navbar navbarOptions = {navbarOptions} metaData={navbarData}/>
-      <div 
-      onClick={()=> {setLoaded(!loaded)}}
-      className={`${loaded ? 'h-[80vh]' : 'h-[100vh]'}  w-full relative bg-transparent duration-[2000ms]`}></div>
-      {/* <div className="h-screen w-full relative bg-[rgb(0,0,0,0.7)] backdrop-filter backdrop-blur-lg"></div> */}
-      <div className="h-screen w-full relative bg-black">
-        <div className='min-h-screen w-full'>
-          <div className="top_filler w-full h-[64px]"></div>
-          <div className="text_con mx-auto w-fit my-5 text-center">
-            <h1 className="max-[420px]:text-4xl text-white text-6xl">Astronomy</h1>
-            <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Picture</h1>
-            <h1 className="max-[420px]:text-4xl text-white text-6xl">of the</h1>
-            <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Day</h1>
+      {
+        isLogged() &&
+        <div className='h-auto w-full'>
+
+        <div className="bg-black h-screen w-full fixed top-0 left-0 z-0">
+          <img src={backDropStars} alt="" className={`absolute opacity-80 w-full h-[160vh] object-cover ${loaded ? '-translate-y-[60vh]' : 'translate-y-0'} transition-transform duration-[2000ms] z-2`}/>
+          <img src={EarthImage} alt="" className={`absolute left-[50%] w-[80%] -translate-x-[50%] max-sm:w-[90vw] ${loaded ? 'top-[0] max-md:top-[20%] max-sm:top-[30%]' : 'top-[40%]' } duration-[2000ms]`}/>
+        </div>
+        <Navbar navbarOptions = {navbarOptions} metaData={navbarData}/>
+        <div 
+        onClick={()=> {setLoaded(!loaded)}}
+        className={`${loaded ? 'h-[80vh]' : 'h-[100vh]'}  w-full relative bg-transparent duration-[2000ms]`}></div>
+        {/* <div className="h-screen w-full relative bg-[rgb(0,0,0,0.7)] backdrop-filter backdrop-blur-lg"></div> */}
+        <div className="h-screen w-full relative bg-black">
+          <div className='min-h-screen w-full'>
+            <div className="top_filler w-full h-[64px]"></div>
+            <div className="text_con mx-auto w-fit my-5 text-center">
+              <h1 className="max-[420px]:text-4xl text-white text-6xl">Astronomy</h1>
+              <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Picture</h1>
+              <h1 className="max-[420px]:text-4xl text-white text-6xl">of the</h1>
+              <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Day</h1>
+            </div>
           </div>
         </div>
+
       </div>
+      }
+      
     </div>
   )
 }
