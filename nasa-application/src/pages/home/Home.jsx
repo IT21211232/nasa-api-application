@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
+import './home.css'
 import { useNavigate } from 'react-router-dom'
 import Navbar from '../../components/common/navbar/Navbar'
 
 import backDropStars from '../../assets/images/starrySky.svg'
 import EarthImage from '../../assets/images/earthEdit1.png'
+
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
 import { LoginRegisterContext } from '../../context/LoginRegisterContext'
 
@@ -11,6 +14,8 @@ export default function Home() {
   const [loaded, setLoaded] = useState(false)
   const [stayDown, setStayDown] = useState(true)
   const [opaqueNav, setOpaqueNav] = useState(false)
+  const [fetchedData, setFetchedData] = useState({});
+  
 
   const {isLogged} = useContext(LoginRegisterContext)
 
@@ -39,6 +44,7 @@ export default function Home() {
   }
   
   useEffect(()=> {
+    window.scrollTo(0,0)
     let loadTimer1;
     let scrollTimer;
     loadTimer1 = setTimeout(() => {
@@ -62,6 +68,19 @@ export default function Home() {
       navigate('/')
     }
 
+    async function fetchAPIData(){
+      const url = 'https://api.nasa.gov/planetary/apod'+ `?api_key=${NASA_API}`
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        setFetchedData(data)
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+
+    fetchAPIData();
+
     window.addEventListener('scroll', calculateScroll)
 
     return () => {
@@ -69,7 +88,7 @@ export default function Home() {
     }
   }, [])
   return (
-    <div className="h-auto w-full min-h-screen bg-transparent">
+    <div className="home_page h-auto w-full min-h-screen bg-transparent">
       {
         isLogged() &&
         <div className='h-auto w-full'>
@@ -83,8 +102,8 @@ export default function Home() {
         onClick={()=> {setLoaded(!loaded)}}
         className={`${loaded ? 'h-[80vh]' : 'h-[100vh]'}  w-full relative bg-transparent duration-[2000ms]`}></div>
         {/* <div className="h-screen w-full relative bg-[rgb(0,0,0,0.7)] backdrop-filter backdrop-blur-lg"></div> */}
-        <div className="h-screen w-full relative bg-black">
-          <div className='min-h-screen w-full'>
+        <div className="min-h-screen w-full relative bg-black">
+          <div className='min-h-screen w-full overflow-hidden'>
             <div className="top_filler w-full h-[64px]"></div>
             <div className="text_con mx-auto w-fit my-5 text-center">
               <h1 className="max-[420px]:text-4xl text-white text-6xl">Astronomy</h1>
@@ -92,6 +111,19 @@ export default function Home() {
               <h1 className="max-[420px]:text-4xl text-white text-6xl">of the</h1>
               <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Day</h1>
             </div>
+            <div className="image_con">
+              <div className="first_layer layers"></div>
+              <div className="second_layer layers"></div>
+              <div className="image_layer layers">
+                <img src={fetchedData.url} alt="" />
+              </div>
+            </div>
+            <button
+            onClick={()=> {navigate('/apod')}}
+            className='flex relative items-center text-[#a1a1a1] mx-auto mb-10'>
+              <h3 className='text-sm mx-1 border border-[#a1a1a1] px-3 py-1 rounded-[40px]'>View more</h3>
+              <ArrowForwardIosRoundedIcon className='absolute right-[-26px]' sx={{fontSize: 20}} />
+            </button>
           </div>
         </div>
 

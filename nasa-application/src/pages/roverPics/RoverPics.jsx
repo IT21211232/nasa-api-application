@@ -247,6 +247,7 @@ export default function RoverPics() {
       }
 
       useEffect(()=> {
+        window.scrollTo(0,0)
         const NASA_API = process.env.React_App_NASA_API_KEY;
         
         async function fetchAPIData(){
