@@ -11,6 +11,12 @@ export default function Navbar({navbarOptions, metaData}) {
   const {stayDown, background} = metaData;
   const [navbarOpen, setNavbarOpen] = useState(false)
   const {logoutUser} = useContext(LoginRegisterContext)
+
+  function extractEmailPrefix(email) {
+    var emailRegex = /^([^@]+)@/;
+    var match = email.match(emailRegex);
+    return match ? match[1] : null;
+}
   
   return (
     <nav 
@@ -22,7 +28,7 @@ export default function Navbar({navbarOptions, metaData}) {
         ))
         }
         <div className=' my-4 flex flex-col items-center h-auto w-fit text-white'>
-          <h2 className="logged_user mx-2">John Wilson</h2>
+          <h2 className="logged_user mx-2">{extractEmailPrefix(localStorage.getItem('username'))}</h2>
           <button
           onClick={logoutUser}
           className="h-auto flex items-center my-4">
@@ -39,7 +45,7 @@ export default function Navbar({navbarOptions, metaData}) {
         ))
         }
         <div className='flex flex-col items-center text-white text-sm mx-2.5 '>
-          <h2>John Wilson</h2>
+          <h2 className='max-w-[100px] overflow-hidden text-ellipsis'>{extractEmailPrefix(localStorage.getItem('username'))}</h2>
           <button
           onClick={logoutUser}
           className='opacity-60 hover:opacity-100 duration-200'>logout</button>
