@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebase';
 
 export default function Signin() {
     const [disMessage, setDisMessage] = useState(null)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
 
     const navigate = useNavigate()
 
@@ -18,23 +19,21 @@ export default function Signin() {
           setDisMessage('Fill the required fields to sign in')
       }
       else{
-        const userData = {
-          username,
-          password,
-          name,
-        }
-        axios.post(postUrl, userData).then((res) => {
+      createUserWithEmailAndPassword(auth, username, password)
+        .then((userCredential) => {
+          console.log(userCredential);
           navigate('/')
-          console.log(res.data);
-      }).catch((err) => {
-          if(err.response.status === 400){
-            setDisMessage('Username already exist!')
+        }).catch((err)=> {
+          if(err.code === 'auth/email-already-in-use'){
+            setDisMessage('Email is already taken, please try a different email')
           }
-          else if(err.response.status === 500){
-            setDisMessage('Server error! Please try again later')
+          else if(err.code == 'auth/network-request-failed'){
+            setDisMessage('Server error or check you connection and try again later!')
           }
-      })
-
+          else{
+           setDisMessage('Signing up unsuccessful!') 
+          }
+        })
       }
   }
   return (
@@ -47,12 +46,13 @@ export default function Signin() {
         <form 
         onSubmit={handleForm}
         className="input_con_sub flex flex-col items-center h-auto w-[60%] max-[420px]:w-[70%]">
-            <input onChange={(e)=> {setUsername(e.target.value)}} name={'username'} placeholder='Username' className='bg-[rgba(255,255,255,0.4)] h-[42px] text-sm w-full rounded-md my-2 box-border px-4 focus:outline-none focus:bg-[rgba(255,255,255,1)] transition-all duration-300' type="text" />
+            <h1 className='text-2xl font-semibold mb-2'>Sign Up</h1>
+            <p className='text-center text-gray-600'>Enter an email and a password for your account!</p>
+            <input onChange={(e)=> {setUsername(e.target.value)}} name={'username'} placeholder='Email' className='bg-[rgba(255,255,255,0.4)] h-[42px] text-sm w-full rounded-md my-2 box-border px-4 focus:outline-none focus:bg-[rgba(255,255,255,1)] transition-all duration-300' type="text" />
             <input onChange={(e)=> {setPassword(e.target.value)}} name={'password'} placeholder='Password' className='bg-[rgba(255,255,255,0.4)] h-[42px] text-sm w-full rounded-md my-2 box-border px-4 focus:outline-none focus:bg-[rgba(255,255,255,1)] transition-all duration-300' type="password" />
-            <input onChange={(e)=> {setName(e.target.value)}} name={'email'} placeholder='Nick Name' className='bg-[rgba(255,255,255,0.4)] h-[42px] text-sm w-full rounded-md my-2 box-border px-4 focus:outline-none focus:bg-[rgba(255,255,255,1)] transition-all duration-300' type="text" />
             <button
             type='submit'
-            className='w-full h-[42px] bg-black text-white rounded-md my-2 text-sm'>Sign In</button>
+            className='w-full h-[42px] bg-black text-white rounded-md my-2 text-sm'>Sign Up</button>
             {
                 disMessage &&
                 <h3 className='text-red-500 mt-1 text-sm'>{disMessage}</h3>
