@@ -53,6 +53,7 @@ To run the project locally, follow the installation instructions provided in the
 
 - **Username**: it21211232@my.sliit.lk
 - **password**: Tester432
+- **Or you can sign up and use your own account**
 
 # Challenges faced and how they were resolved
 
