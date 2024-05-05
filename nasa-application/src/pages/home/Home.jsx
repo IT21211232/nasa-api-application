@@ -7,6 +7,7 @@ import backDropStars from '../../assets/images/starrySky.svg'
 import EarthImage from '../../assets/images/earthEdit1.png'
 
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
 import { LoginRegisterContext } from '../../context/LoginRegisterContext'
 
@@ -15,12 +16,16 @@ export default function Home() {
   const [stayDown, setStayDown] = useState(true)
   const [opaqueNav, setOpaqueNav] = useState(false)
   const [fetchedData, setFetchedData] = useState({});
+
+  const [searchQuery, setSearchQuery] = useState(null)
+  const [searchedData, setSearchedData] = useState([])
+
   
-
+  
   const {isLogged} = useContext(LoginRegisterContext)
-
+  
   const navigate = useNavigate();
-
+  
   const NASA_API = process.env.React_App_NASA_API_KEY;
   
   const navbarOptions = [
@@ -42,6 +47,19 @@ export default function Home() {
     stayDown,
     background: loaded ? true : false
   }
+  
+  const startSearch = async(e) => {
+    e.preventDefault();
+    const apiUrl = `https://images-api.nasa.gov/search?q=${searchQuery}&page=1&media_type=image&year_start=1920&year_end=2024`
+    try {
+      const res = await fetch(apiUrl);
+      const data = await res.json();
+      setSearchedData(data.collection.items)
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+  
   
   useEffect(()=> {
     // window.scrollTo(0,0)
@@ -124,6 +142,40 @@ export default function Home() {
               <h3 className='text-sm mx-1 border border-[#a1a1a1] px-3 py-1 rounded-[40px]'>View more</h3>
               <ArrowForwardIosRoundedIcon className='absolute right-[-26px]' sx={{fontSize: 20}} />
             </button>
+          </div>
+        </div>
+        <div className="min-h-[20px] w-full relative backdrop-filter backdrop-blur-sm bg-[rgba(255,255,255,0.1)] overflow-hidden">
+          
+        </div>
+        <div className="min-h-screen flex flex-col items-center w-full relative bg-black overflow-hidden">
+          <div className="filler_com h-[60px] w-full"></div>
+          <div className='text_con mx-auto w-fit text-center mb-2'>
+            <h1 className="max-[420px]:text-4xl text-white text-6xl">Nasa</h1>
+            <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Image</h1>
+            <h1 className="max-[420px]:text-4xl text-white text-6xl">Library</h1>
+          </div>
+          <div className="search_display flex flex-col flex-1 max-h-[70vh] w-[96%]">
+            <div className="search w-full h-11">
+              <div className="input_con relative w-[96%] h-auto mx-auto mt-1">
+                <SearchRoundedIcon sx={{fontSize: 20}} className='absolute top-[50%] left-2 -translate-y-1/2 text-[#a1a1a1]'/>
+                <form 
+                onSubmit={startSearch}
+                action="">
+                  <input
+                  onChange={(e)=> {setSearchQuery(e.target.value)}}
+                   placeholder='Enter to search' type="text" className='h-10 w-full rounded-[100px] border-[1px] border-[solid] border-[#a1a1a1] bg-transparent px-7 text-white focus:outline-none'/>
+                </form>
+              </div>
+            </div>
+            <div className="display w-[98%] h-[calc(100%-44px)] grid grid-cols-2 md:grid-cols-3 max-[500px]:grid-cols-1 gap-1 overflow-auto mx-auto scroll-smooth">
+              {
+                searchedData.map((data)=> (
+                  <div className="h-[250px] rounded-md overflow-hidden">
+                    <img src={data.links[0].href} className='h-full w-full object-cover' alt="" />
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
 
