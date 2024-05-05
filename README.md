@@ -49,4 +49,15 @@ To run the project locally, follow the installation instructions provided in the
 - **Link**: https://earnest-marigold-daa848.netlify.app/
 - **To open the hosted website click on the above link**
 
-# Challenges faced and how they were resolved them
+# User Credentials
+
+- **Username**: it21211232@my.sliit.lk
+- **password**: Tester432
+
+# Challenges faced and how they were resolved
+
+- **Problem**: Integrating with NASA APIs often requires an API key for authentication. Managing API keys securely and ensuring they are included in the API requests.
+- **solution**: Use environment variables to securely store API keys. Ensure that API keys are kept out of version control by adding them to a .env file and using a package like dotenv to load them into your application.
+
+- **Problem**: Fetching data from NASA APIs asynchronously and efficiently while ensuring a smooth user experience .
+- **solution**: Utilize asynchronous JavaScript techniques such as Promises, async/await, and libraries like Axios to fetch data from NASA APIs.
