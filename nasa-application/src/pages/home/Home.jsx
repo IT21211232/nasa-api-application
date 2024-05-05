@@ -5,6 +5,7 @@ import Navbar from '../../components/common/navbar/Navbar'
 
 import backDropStars from '../../assets/images/starrySky.svg'
 import EarthImage from '../../assets/images/earthEdit1.png'
+import EmptyImage from '../../assets/images/icons/emptyImage.svg'
 
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
@@ -167,7 +168,9 @@ export default function Home() {
                 </form>
               </div>
             </div>
-            <div className="display w-[98%] h-[calc(100%-44px)] grid grid-cols-2 md:grid-cols-3 max-[500px]:grid-cols-1 gap-1 overflow-auto mx-auto scroll-smooth">
+            {
+              searchedData.length > 0 ?
+              <div className="display w-[98%] h-[calc(100%-44px)] grid grid-cols-2 md:grid-cols-3 max-[500px]:grid-cols-1 gap-1 overflow-auto mx-auto scroll-smooth">
               {
                 searchedData.map((data)=> (
                   <div className="h-[250px] rounded-md overflow-hidden">
@@ -175,7 +178,13 @@ export default function Home() {
                   </div>
                 ))
               }
+            </div> :
+            <div className='w-[98%] flex flex-col items-center justify-center flex-1'>
+              <img src={EmptyImage} className='filter invert h-[100px]' alt="" />
+              <h1 className='text-[#a1a1a1] text-xl mt-4'>No images to display!</h1>
             </div>
+            }
+            
           </div>
         </div>
 
