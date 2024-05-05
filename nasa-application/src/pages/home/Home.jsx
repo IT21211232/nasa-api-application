@@ -116,7 +116,7 @@ export default function Home() {
               </div>
             </div>
             <div className="desc_con mx-auto px-3 text-center mb-10 w-[90%]">
-              <h2 className='text-[#3b3b3b]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quos a dolore cumque molestias quo corrupti voluptas, ullam veniam? Accusamus commodi iste pariatur quia explicabo consectetur dolor! Distinctio quibusdam excepturi debitis nihil veniam. Laboriosam ex nisi obcaecati mollitia fugiat provident!</h2>
+              <h2 className='text-[#3b3b3b]'>{fetchedData.explanation}</h2>
             </div>
             <button
             onClick={()=> {navigate('/apod')}}
