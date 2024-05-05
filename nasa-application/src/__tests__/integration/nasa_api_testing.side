@@ -1,0 +1,370 @@
+{
+  "id": "da529a10-a8fd-4c42-aa50-fa305f2ff3e0",
+  "version": "2.0",
+  "name": "nasa_api_testing",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "87c83172-088c-4803-9823-db95aa2c6a84",
+    "name": "test1",
+    "commands": [{
+      "id": "a1f8ed87-1d4d-4bba-b894-2fec341920fc",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de5099dd-3be0-4932-acdc-54f25a4e7649",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2463e18e-30af-4d2a-88a4-acffb1d12098",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.bg-\\[rgba\\(255\\,255\\,255\\,0\\.4\\)\\]:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c2f2b06-488b-4159-8d0c-8faaf56e5c9c",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=.bg-\\[rgba\\(255\\,255\\,255\\,0\\.4\\)\\]:nth-child(3)", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "it21211232@my.sliit.lk"
+    }, {
+      "id": "439bee16-9258-46bd-9fc3-27aba0ed55db",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.bg-\\[rgba\\(255\\,255\\,255\\,0\\.4\\)\\]:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "61bd9215-8876-4b6e-82ad-8f633e51a4d0",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.bg-\\[rgba\\(255\\,255\\,255\\,0\\.4\\)\\]:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Tester432"
+    }, {
+      "id": "d965794e-ec72-427e-8278-8af5fce94c0d",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.bg-\\[rgba\\(255\\,255\\,255\\,0\\.4\\)\\]:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/form/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3bab9761-ffc3-42f9-9924-b7b61b387d04",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-white",
+      "targets": [
+        ["css=.text-white", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[2]/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24dc5a69-ae42-45d2-9cdc-3bff669e7924",
+      "comment": "",
+      "command": "click",
+      "target": "css=.left-2\\/4",
+      "targets": [
+        ["css=.left-2\\/4", "css:finder"],
+        ["xpath=//img[@alt='logo image']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/nav/img", "xpath:idRelative"],
+        ["xpath=//nav/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58e67c3f-af06-425c-b37e-9f4feb2d0473",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-\\[80vh\\]",
+      "targets": [
+        ["css=.h-\\[80vh\\]", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc232367-3193-4c34-921c-07a5ad30752e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.max-\\[420px\\]\\3Atext-4xl:nth-child(1)",
+      "targets": [
+        ["css=.max-\\[420px\\]\\3Atext-4xl:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[3]/div/div[2]/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Astronomy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "72c14cfa-89ed-41ae-8bce-4df0510304c3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=APOD",
+      "targets": [
+        ["linkText=APOD", "linkText"],
+        ["css=.text-sm:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'APOD')])[2]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/apod')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "193bf2ef-a89a-45b7-bf66-e98fbfb86528",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-wrap",
+      "targets": [
+        ["css=.text-wrap", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/div/h1", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'A Black Hole Disrupts a Passing Star')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d473e7c8-736a-4c32-938a-01264b21db10",
+      "comment": "",
+      "command": "click",
+      "target": "css=.text-\\[\\#a1a1a1\\]",
+      "targets": [
+        ["css=.text-\\[\\#a1a1a1\\]", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcd91844-52ec-4438-9e76-336a37d5dd0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.z-2",
+      "targets": [
+        ["css=.z-2", "css:finder"],
+        ["xpath=//img[contains(@src,'https://apod.nasa.gov/apod/image/2405/BhShredder_NASA_1080.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c75811ec-afb3-4caf-b84f-6490c3bea95c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-\\[140\\%\\]",
+      "targets": [
+        ["css=.h-\\[140\\%\\]", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45b7ce77-bd62-449e-b426-76f54886bafd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rover Pics",
+      "targets": [
+        ["linkText=Rover Pics", "linkText"],
+        ["css=.text-sm:nth-child(3)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Rover Pics')])[2]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/nav/div[2]/a[3]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/rover')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75919136-e22b-4bbf-8207-13be50822769",
+      "comment": "",
+      "command": "click",
+      "target": "css=.blur-\\[40px\\]",
+      "targets": [
+        ["css=.blur-\\[40px\\]", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e599b56e-9a2b-4a12-baab-75e0db563ecf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.h-14",
+      "targets": [
+        ["css=.h-14", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/nav", "xpath:idRelative"],
+        ["xpath=//nav", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9859e93-f306-47b2-93fe-d6c3af19ff00",
+      "comment": "",
+      "command": "click",
+      "target": "css=.relative:nth-child(4)",
+      "targets": [
+        ["css=.relative:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/h1[3]", "xpath:idRelative"],
+        ["xpath=//h1[3]", "xpath:position"],
+        ["xpath=//h1[contains(.,'Photos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f75b4653-5f25-4179-a09c-8eb0e2f3a731",
+      "comment": "",
+      "command": "click",
+      "target": "css=.relative:nth-child(2)",
+      "targets": [
+        ["css=.relative:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Mars')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d7b72e7-dede-47bd-a785-7d238badbee6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.flex:nth-child(4) > .image_holder > img",
+      "targets": [
+        ["css=.flex:nth-child(4) > .image_holder > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01004/opgs/edr/rcam/RRB_486615482EDR_F0481570RHAZ00323M_.JPG')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[3]/div[4]/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73277ad2-e29a-4bbb-9821-10eb14437801",
+      "comment": "",
+      "command": "click",
+      "target": "css=.flex:nth-child(1) > .image_holder > img",
+      "targets": [
+        ["css=.flex:nth-child(1) > .image_holder > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01004/opgs/edr/fcam/FLB_486615455EDR_F0481570FHAZ00323M_.JPG')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[3]/div/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3688959-0bbc-492f-be87-208dea3a64c7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.flex:nth-child(2) > .image_holder > img",
+      "targets": [
+        ["css=.flex:nth-child(2) > .image_holder > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01004/opgs/edr/fcam/FRB_486615455EDR_F0481570FHAZ00323M_.JPG')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[3]/div[2]/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3db2e6d1-277e-4265-9f80-0b961709f122",
+      "comment": "",
+      "command": "click",
+      "target": "css=.flex:nth-child(3) > .image_holder > img",
+      "targets": [
+        ["css=.flex:nth-child(3) > .image_holder > img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01004/opgs/edr/rcam/RLB_486615482EDR_F0481570RHAZ00323M_.JPG')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[3]/div[3]/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a47a1f7-2cec-4778-8725-a195d51d3f6e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=.text-sm:nth-child(1)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Home')])[2]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/nav/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/home')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0db03d6-54e2-45ca-a0f2-9d2957c67fa2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=APOD",
+      "targets": [
+        ["linkText=APOD", "linkText"],
+        ["css=.text-sm:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'APOD')])[2]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/nav/div[2]/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/apod')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36052d76-5a12-46eb-bd4d-4e135e3058fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.z-2",
+      "targets": [
+        ["css=.z-2", "css:finder"],
+        ["xpath=//img[contains(@src,'https://apod.nasa.gov/apod/image/2405/BhShredder_NASA_1080.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/div[2]/div[2]/div[2]/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d4264eb-e1b7-4d9c-85fd-e6c504873a87",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Rover Pics",
+      "targets": [
+        ["linkText=Rover Pics", "linkText"],
+        ["css=.text-sm:nth-child(3)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Rover Pics')])[2]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/nav/div[2]/a[3]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/rover')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "dcd89157-e4df-45ce-bb31-d97139069619",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["87c83172-088c-4803-9823-db95aa2c6a84"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
