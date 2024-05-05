@@ -4,14 +4,20 @@ This project is a web application built for fetching and displaying data from th
 
 # Features
 
-## Astronomy Picture of the Day
+- **Astronomy Picture of the Day**: Users get to view daily uploaded content about the universe. The data returned from this API includes images, explanations, etc.
 
-Users get to view daily uploaded content about the universe. The data returned from this API includes images, explanations, etc.
+- **Mars Rover Photos**: This api returns a bunch of fascinating images captured by the NASA's Mars Rover. It allows users to witness the wonderful nature of our neighbouring planet.
 
-## Mars Rover Photos
+- **Earth Imagery**: Users can simply type in a keyword and get hundreds of images related to that.
 
-This api returns a bunch of fascinating images captured by the NASA's Mars Rover. It allows users to witness the wonderful nature of our neighbouring planet.
+# Technologies used
 
-## Earth Imagery
+- **React** : The project is built using React which is a popular javascript library.
+- **Tailwind**: A utility-first CSS framework packed with classes to make the process of development easy and efficient.
+- **Firebase user authentication**: Firebase authentication is used for authentication of the user.
 
-Users can simply type in a keyword and get hundreds of images relevant to that.
+# Installation of the project
+
+# Hosted website link
+
+- **Link**: https://earnest-marigold-daa848.netlify.app/
