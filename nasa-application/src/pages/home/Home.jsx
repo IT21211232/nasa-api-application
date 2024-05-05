@@ -44,7 +44,7 @@ export default function Home() {
   }
   
   useEffect(()=> {
-    window.scrollTo(0,0)
+    // window.scrollTo(0,0)
     let loadTimer1;
     let scrollTimer;
     loadTimer1 = setTimeout(() => {
@@ -99,7 +99,6 @@ export default function Home() {
         </div>
         <Navbar navbarOptions = {navbarOptions} metaData={navbarData}/>
         <div 
-        onClick={()=> {setLoaded(!loaded)}}
         className={`${loaded ? 'h-[80vh]' : 'h-[100vh]'}  w-full relative bg-transparent duration-[2000ms]`}></div>
         {/* <div className="h-screen w-full relative bg-[rgb(0,0,0,0.7)] backdrop-filter backdrop-blur-lg"></div> */}
         <div className="min-h-screen w-full relative bg-black">
@@ -112,11 +111,12 @@ export default function Home() {
               <h1 className="max-[420px]:text-4xl text-[#282828] text-6xl">Day</h1>
             </div>
             <div className="image_con">
-              <div className="first_layer layers"></div>
-              <div className="second_layer layers"></div>
-              <div className="image_layer layers">
-                <img src={fetchedData.url} alt="" />
+              <div className="image_layer layers w-full h-full">
+                <img className='w-full h-full' src={fetchedData.url} alt="" />
               </div>
+            </div>
+            <div className="desc_con mx-auto px-3 text-center mb-10 w-[90%]">
+              <h2 className='text-[#3b3b3b]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quos a dolore cumque molestias quo corrupti voluptas, ullam veniam? Accusamus commodi iste pariatur quia explicabo consectetur dolor! Distinctio quibusdam excepturi debitis nihil veniam. Laboriosam ex nisi obcaecati mollitia fugiat provident!</h2>
             </div>
             <button
             onClick={()=> {navigate('/apod')}}
